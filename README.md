@@ -1,6 +1,6 @@
 # REPLACE THIS WITH TOPIC TITLE
 # Team Members
-1.
+1. Bob Garber
 2. 
 3. 
 
