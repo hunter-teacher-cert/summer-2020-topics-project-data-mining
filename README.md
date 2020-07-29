@@ -7,7 +7,7 @@
  
 
 # Instructions
-Lesson: Data Mining
+# Lesson: Data Mining
 
 [Link to Presentation Slides:](https://docs.google.com/presentation/d/15nWpWcGRIUImwYmCyd8B1hHtwyr1EGVjeTxebaWSWbQ/edit?usp=sharing)
 
@@ -15,6 +15,7 @@ Lesson: Data Mining
 
 [Link to Blank Store Layout](https://docs.google.com/drawings/d/1XUmgwojBZY3g_pzDWBMNhfnbhkLWgSnPJfEpqwV3YdQ/edit?usp=sharing)
 
-Lesson: Data Mining from an API
+# Lesson: Data Mining from an API
 [Link to Lesson Plan](https://docs.google.com/document/d/1OhAFpZru7Y4lNI13A7Ch51f8ngQbHSLnFOtUnF3eNQ0/edit?usp=sharing)
+
 Code is in Gethub
