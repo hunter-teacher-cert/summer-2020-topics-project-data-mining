@@ -15,6 +15,25 @@ import org.json.JSONArray;
 
 public class JsonReader {
 
+  private JSONArray jarray;
+  private JSONObject jobj;
+  private String jsonText;
+  
+  public JsonReader()	{
+	  this.jarray = null;
+	  this.jobj = null;
+	  this.jsonText = null;
+  }	  
+  
+  public  JSONArray getJSONArray() {
+	  return this.jarray;
+  }
+
+  public  JSONObject getJSONobj()	{
+	  return this.jobj;
+  }		
+	  
+	  
   private static String readAll(Reader rd) throws IOException {
     StringBuilder sb = new StringBuilder();
     int cp;
@@ -63,6 +82,17 @@ public class JsonReader {
 		 return ja;
 	}
 	
+	public  void readJSONURL(String url) throws IOException, JSONException  {
+		
+		this.jsonText = readtextFromUrl(url);
+		
+		if (this.jsonText.charAt(0) == '[')	{  // we have a JSON array here
+			this.jarray = new JSONArray(jsonText);
+		  }  
+		 // we just have a plain JSON Object
+		 else this.jobj = new JSONObject(jsonText);
+	
+	}
 		
 	public static Object getValue(JSONObject json, String key)	{
 		return(json.get(key));
@@ -76,24 +106,9 @@ public class JsonReader {
 		return al;
 	}	
 	  
-	  
-    public static void main(String[] args) throws IOException, JSONException {
-    //JSONObject json = getJsonObj("https://covidtracking.com/api/v1/states/ny/current.json");
-	JSONArray al = getJsonArray("https://covidtracking.com/api/v1/states/ny/daily.json");
-	JSONObject json = al.getJSONObject(0);
-    System.out.println(json.toString());
-	handleJSONObject(json);
-	System.out.printf("positiveCasesViral:%s\n",json.get("positiveCasesViral"));
+	public static String getKeyValueString(JSONObject json, String key)	{
+		Object obj;
+		obj = getValue(json, key);
+		return obj.toString();
 	}
-	
-	public static void handleJSONObject(JSONObject jsonObject) {
-		/* jsonObject.keys().forEachRemaining(key -> {
-			Object value = jsonObject.get(key);
-		*/
-			ArrayList<String> al = getKeyList(jsonObject);
-			for (int i=0; i<al.size(); i++)
-				System.out.printf("Key: %s\tValue: %s\n", al.get(i), getValue(jsonObject, al.get(i)).toString());
-			
-    }
-
 }
