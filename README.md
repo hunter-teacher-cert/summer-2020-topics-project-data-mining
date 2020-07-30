@@ -8,6 +8,7 @@
 
 # Instructions
 # Lesson: Data Mining
+(Note that the Github has Office Versions of the linked files below so you can modify and personalize them in Office.
 
 [Link to Presentation Slides:](https://docs.google.com/presentation/d/15nWpWcGRIUImwYmCyd8B1hHtwyr1EGVjeTxebaWSWbQ/edit?usp=sharing)
 
